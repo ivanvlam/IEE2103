@@ -1,0 +1,201 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6576,        193]
+NotebookOptionsPosition[      5834,        173]
+NotebookOutlinePosition[      6310,        190]
+CellTagsIndexPosition[      6267,        187]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "1) La ecuaci\[OAcute]n puede ser resuelta mediante la aplicaci\[OAcute]n de \
+la Transformada de Fourier sobre el espacio x y su propiedad de la derivaci\
+\[OAcute]n en el tiempo, es decir, se puede reescribir como: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["d", "2"], 
+      SuperscriptBox["dt", "2"]], 
+     RowBox[{"S", "(", 
+      RowBox[{"u", ",", " ", "t"}], ")"}]}], " ", "=", " ", 
+    RowBox[{
+     SuperscriptBox["c", "2"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"i", " ", "2", " ", "\[Pi]", " ", "u"}], ")"}], "2"], " ", 
+     RowBox[{"S", "(", 
+      RowBox[{"u", ",", " ", "t"}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"2291bbeb-2d03-49e3-9446-fb5f31dd326e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.8643243707462883`*^9, 
+  3.864324564962686*^9}},ExpressionUUID->"4352faef-2957-4e19-b810-\
+524b26382290"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"S", "[", 
+         RowBox[{"u", ",", "t"}], "]"}], ",", "t", ",", "t"}], "]"}], 
+      "\[Equal]", 
+      RowBox[{
+       SuperscriptBox["c", "2"], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"I", " ", "2", " ", "\[Pi]", " ", "u"}], ")"}], "2"], " ", 
+       RowBox[{"S", "[", 
+        RowBox[{"u", ",", "t"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"S", "[", 
+       RowBox[{"u", ",", "0"}], "]"}], "\[Equal]", 
+      RowBox[{"F", "[", "u", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"S", "[", 
+           RowBox[{"u", ",", "t"}], "]"}], ",", "t"}], "]"}], "/.", 
+        RowBox[{"t", "\[Rule]", "0"}]}], ")"}], "\[Equal]", "0"}]}], "}"}], 
+   ",", 
+   RowBox[{"S", "[", 
+    RowBox[{"u", ",", "t"}], "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.86432409097994*^9, 3.8643242275967536`*^9}, 
+   3.8643243311132298`*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"01174d41-12c7-4ecb-94be-e701c32369f9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"S", "[", 
+     RowBox[{"u", ",", "t"}], "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", " ", "c", " ", "\[Pi]", " ", "t", " ", "u"}], "]"}], " ", 
+     RowBox[{"F", "[", "u", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.864324222367195*^9, 3.8643242281554236`*^9}},
+ CellLabel->"Out[2]=",ExpressionUUID->"a2a6e43e-d4da-4446-a769-51f5f8636799"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\na) F(u) es la transformada de Fourier de la funci\[OAcute]n ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "(", "x", ")"}], " ", "=", " ", 
+    RowBox[{"a", "\[And]", 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"x", "-", 
+        FractionBox["L", "2"]}], 
+       FractionBox["L", "2"]], ")"}]}]}], TraditionalForm]],ExpressionUUID->
+  "2ab44e0d-8e84-4074-b2d2-e39b5bf2eb24"],
+ "\nDe esta manera, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "(", 
+     RowBox[{"x", ",", " ", "t"}], ")"}], " ", "=", " ", 
+    RowBox[{
+     SuperscriptBox["\[ScriptCapitalF]", 
+      RowBox[{"-", "1"}]], 
+     RowBox[{"{", " ", 
+      RowBox[{"cos", "(", 
+       RowBox[{"2", "c", " ", "\[Pi]", " ", "t", " ", "u"}], ")"}], " ", 
+      "}"}], " ", "*", " ", 
+     SuperscriptBox["\[ScriptCapitalF]", 
+      RowBox[{"-", "1"}]], 
+     RowBox[{"{", " ", 
+      RowBox[{"F", "(", " ", "u", " ", ")"}], " ", "}"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"299d3c3d-655a-4447-9a64-2bdbdd838cc0"],
+ "\nAplicando la propiedad de la dualidad, se tiene:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "(", 
+     RowBox[{"x", ",", " ", "t"}], ")"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"\[UpArrow]", 
+      SubscriptBox["\[UpArrow]", "c"]}], " ", "*", " ", 
+     RowBox[{"f", "(", "x", ")"}]}]}], TraditionalForm]],
+  InitializationCell->True,ExpressionUUID->
+  "77b15e05-e34f-4275-8760-6b949be77495"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "(", 
+     RowBox[{"x", ",", " ", "t"}], ")"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[UpArrow]", 
+       SubscriptBox["\[UpArrow]", "c"]}], " ", "*", " ", "a"}], "\[And]", 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"x", "-", 
+        FractionBox["L", "2"]}], 
+       FractionBox["L", "2"]], ")"}]}]}], TraditionalForm]],
+  InitializationCell->True,ExpressionUUID->
+  "0b945651-5bc1-4ad4-83d6-3ea081fbc3a3"]
+}], "Text",
+ CellChangeTimes->{{3.864324750500673*^9, 3.8643247520759974`*^9}, {
+  3.864599831293616*^9, 3.864599840104987*^9}, {3.8646010505057197`*^9, 
+  3.864601185682168*^9}, {3.864749104311407*^9, 3.864749110269418*^9}, {
+  3.864749243100882*^9, 3.8647493018521957`*^9}, {3.8647493345876217`*^9, 
+  3.8647494564039917`*^9}, {3.864749487636839*^9, 3.86474948800098*^9}, {
+  3.864749784877437*^9, 3.864749792891143*^9}, {3.86475002159941*^9, 
+  3.864750021789854*^9}, {3.864750083926053*^9, 3.864750130139019*^9}, {
+  3.8647502371360903`*^9, 3.8647503955327773`*^9}, {3.864750834459264*^9, 
+  3.864750834913906*^9}, {3.864750886800387*^9, 
+  3.8647509896995325`*^9}},ExpressionUUID->"a29dc396-13ff-4e6f-9bd7-\
+14b8baa66cb0"]
+},
+WindowSize->{708., 735.75},
+WindowMargins->{{Automatic, -720}, {Automatic, 0}},
+FrontEndVersion->"12.1 para Microsoft Windows (64-bit) (March 18, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"c2adb0c6-a546-464f-8953-0552ccff4987"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 918, 25, 86, "Text",ExpressionUUID->"4352faef-2957-4e19-b810-524b26382290"],
+Cell[CellGroupData[{
+Cell[1501, 49, 1177, 35, 97, "Input",ExpressionUUID->"01174d41-12c7-4ecb-94be-e701c32369f9"],
+Cell[2681, 86, 455, 11, 39, "Output",ExpressionUUID->"a2a6e43e-d4da-4446-a769-51f5f8636799"]
+}, Open  ]],
+Cell[3151, 100, 2679, 71, 179, "Text",ExpressionUUID->"a29dc396-13ff-4e6f-9bd7-14b8baa66cb0"]
+}
+]
+*)
+
