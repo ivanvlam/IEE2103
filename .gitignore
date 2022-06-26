@@ -25,3 +25,5 @@ Manifest.toml
 
 proyecto.jl
 proyecto.m
+*.rar
+video/
